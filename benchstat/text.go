@@ -65,13 +65,13 @@ func FormatText(w io.Writer, tables []*Table) {
 					fmt.Fprintf(w, "%-*s", max[i], s)
 				default:
 					// Is this a delta, or text?
-					isnote := tables[ti].OldNewDelta && ((len(row.cols) > 4 && i%3 == 0) || i == len(row.cols)-1)
+					isnote := tables[ti].OldNewDelta && ((len(row.cols) > 5 && i%3 == 0) || i == len(row.cols)-1)
 					if isnote {
 						// Left-align notes
-						fmt.Fprintf(w, "__%-*s", max[i], s)
+						fmt.Fprintf(w, "  %-*s", max[i], s)
 						break
 					}
-					fmt.Fprintf(w, "XX%*s", max[i], s)
+					fmt.Fprintf(w, "  %*s", max[i], s)
 				}
 			}
 			fmt.Fprintf(w, "\n")
