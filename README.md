@@ -34,6 +34,8 @@ If invoked on a three or more input files, benchstatn outputs just the raw
 statistics from all the files. If you want to analyze differences, use the
 -showdelta options, this compares every benchmark to the best case sample.
 
+If you want to compare against worst case, use the -deltaworst option.
+
 The -delta-test option controls which significance test is applied: utest
 (Mann-Whitney U-test), ttest (two-sample Welch t-test), or none. The default
 is the U-test, sometimes also referred to as the Wilcoxon rank sum test.
